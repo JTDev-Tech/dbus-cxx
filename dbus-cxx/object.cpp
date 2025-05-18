@@ -350,6 +350,7 @@ std::string Object::introspect( int space_depth ) const {
         << spaces << "        <arg type=\"a{sv}\" name=\"changed_properties\"/>\n"
         << spaces << "        <arg type=\"as\" name=\"invalidated_properties\"/>\n"
         << spaces << "      </signal>\n";
+        << spaces << "  </interface>\n";
         if( m_priv->m_has_object_manager ){
             sout << spaces << "  <interface name=\"" << DBUS_CXX_OBJECT_MANAGER_INTERFACE << "\">\n"
             << spaces << "    <method name=\"GetManagedObjects\">\n"
@@ -363,8 +364,8 @@ std::string Object::introspect( int space_depth ) const {
             << spaces << "       <arg type=\"o\" name=\"object_path\"/>\n"
             << spaces << "        <arg type=\"as\" name=\"interfaces\"/>\n"
             << spaces << "      </signal>\n";
+            << spaces << "  </interface>\n";
         }
-        sout << spaces << "  </interface>\n";
 
         for( i = m_priv->m_interfaces.begin(); i != m_priv->m_interfaces.end(); i++ ) {
             sout << i->second->introspect( space_depth + 2 );
