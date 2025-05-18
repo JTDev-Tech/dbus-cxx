@@ -349,7 +349,7 @@ std::string Object::introspect( int space_depth ) const {
         << spaces << "       <arg type=\"s\" name=\"interface_name\"/>\n"
         << spaces << "        <arg type=\"a{sv}\" name=\"changed_properties\"/>\n"
         << spaces << "        <arg type=\"as\" name=\"invalidated_properties\"/>\n"
-        << spaces << "      </signal>\n";
+        << spaces << "      </signal>\n"
         << spaces << "  </interface>\n";
         if( m_priv->m_has_object_manager ){
             sout << spaces << "  <interface name=\"" << DBUS_CXX_OBJECT_MANAGER_INTERFACE << "\">\n"
@@ -363,7 +363,7 @@ std::string Object::introspect( int space_depth ) const {
             << spaces << "      <signal name=\"InterfacesRemoved\">\n"
             << spaces << "       <arg type=\"o\" name=\"object_path\"/>\n"
             << spaces << "        <arg type=\"as\" name=\"interfaces\"/>\n"
-            << spaces << "      </signal>\n";
+            << spaces << "      </signal>\n"
             << spaces << "  </interface>\n";
         }
 
